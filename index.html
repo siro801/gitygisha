@@ -754,8 +754,27 @@ document.getElementById('mini-popup').addEventListener('click', function(e) {
 </script>
 
 
-<!-- FLOATING HOT UPDATE -->
-<div id="hot-update" style="position:fixed;bottom:24px;left:24px;z-index:9998;max-width:280px;animation:hotPulse 2.5s ease-in-out infinite">
+<!-- FLOATING BUTTONS (stacked) -->
+<div style="position:fixed;bottom:24px;left:24px;z-index:9998;display:flex;flex-direction:column;gap:12px;max-width:300px">
+
+  <!-- NEW LESSON — prominent -->
+  <div id="new-lesson-float" style="animation:hotPulse 2.5s ease-in-out infinite">
+    <div style="background:linear-gradient(135deg,#C9A84C,#F0D58A);border:1px solid rgba(255,255,255,0.6);border-radius:16px;padding:15px 18px;box-shadow:0 12px 40px rgba(201,168,76,0.55),0 0 0 3px rgba(201,168,76,0.3);cursor:pointer" onclick="this.parentElement.style.display='none'">
+      <div style="display:flex;align-items:flex-start;gap:10px">
+        <div style="width:9px;height:9px;border-radius:50%;background:#ff3b3b;flex-shrink:0;margin-top:5px;animation:redPulse 1s infinite"></div>
+        <div>
+          <div style="font-size:11px;letter-spacing:2px;color:#2A1050;text-transform:uppercase;margin-bottom:4px;font-weight:800;font-family:'Assistant',sans-serif">✨ שיעור חדש</div>
+          <div style="font-size:15px;font-weight:800;color:#2A1050;line-height:1.35;font-family:'Assistant',sans-serif">על אהבת תורה — 3 חלקים!</div>
+          <div style="font-size:12px;font-weight:600;color:#3a1d63;line-height:1.55;margin-top:5px;font-family:'Assistant',sans-serif">עלה לקו! חייגי ובחרי:<br>1 עברית ← 2 שיעורים קצרים ← 1 להאזנה</div>
+          <a href="tel:093130743" style="display:inline-block;margin-top:9px;background:linear-gradient(135deg,#2A1050,#6B3FA0);color:white;border-radius:50px;padding:7px 16px;font-size:12.5px;font-weight:700;text-decoration:none;font-family:'Assistant',sans-serif">📞 חייגי 09-313-0743</a>
+        </div>
+        <div style="color:rgba(42,16,80,0.45);font-size:16px;flex-shrink:0;margin-top:-2px">✕</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING HOT UPDATE -->
+  <div id="hot-update" style="animation:hotPulse 2.5s ease-in-out infinite">
   <div style="background:linear-gradient(135deg,#2A1050,#6B3FA0);border:1px solid rgba(201,168,76,0.4);border-radius:16px;padding:14px 18px;box-shadow:0 8px 32px rgba(74,48,128,0.4),0 0 0 2px rgba(201,168,76,0.2);cursor:pointer" onclick="this.parentElement.style.display='none'">
     <div style="display:flex;align-items:flex-start;gap:10px">
       <div style="width:8px;height:8px;border-radius:50%;background:#ff4444;flex-shrink:0;margin-top:5px;animation:redPulse 1s infinite"></div>
@@ -767,6 +786,7 @@ document.getElementById('mini-popup').addEventListener('click', function(e) {
       <div style="color:rgba(255,255,255,0.3);font-size:16px;flex-shrink:0;margin-top:-2px">✕</div>
     </div>
   </div>
+</div>
 </div>
 
 <style>
