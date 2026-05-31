@@ -837,38 +837,6 @@ document.getElementById('mini-popup').addEventListener('click', function(e) {
   animation:pulse-new 1.6s ease infinite reverse;
 }
 
-/* ── תפריט עוגן תחתון ── */
-#bottom-sitemap{
-  background:rgba(10,3,25,.97);
-  border-top:1px solid rgba(201,168,76,.2);
-  padding:48px 24px 60px;
-  direction:rtl;font-family:'Assistant',sans-serif;
-}
-#bottom-sitemap h2{
-  text-align:center;
-  font-size:22px;font-weight:700;
-  color:#C9A84C;letter-spacing:2px;
-  margin:0 0 32px;
-}
-.sitemap-grid{
-  max-width:900px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-  gap:12px;
-}
-.sitemap-item{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(201,168,76,.14);
-  border-radius:12px;
-  padding:13px 16px;
-  color:rgba(255,255,255,.82);
-  font-size:14px;font-weight:600;
-  text-decoration:none;
-  cursor:pointer;
-  transition:background .22s,border-color .22s,color .22s;
-}
-.sitemap-item:hover{background:rgba(201,168,76,.12);border-color:#C9A84C;color:#C9A84C}
-.sitemap-item .si-icon{font-size:18px;flex-shrink:0}
 </style>
 
 <!-- כוכבים -->
@@ -882,25 +850,6 @@ document.getElementById('mini-popup').addEventListener('click', function(e) {
   <button class="snav-btn" onclick="scrollTo('section-contact')">צור קשר</button>
 </nav>
 
-<!-- תפריט עוגן תחתון -->
-<section id="bottom-sitemap">
-  <h2>✦ מה תמצאי כאן ✦</h2>
-  <div class="sitemap-grid">
-    <a class="sitemap-item" onclick="scrollTo('section-courses')"><span class="si-icon">👑</span> קורסים ותוכניות</a>
-    <a class="sitemap-item" onclick="scrollTo('mini-course')"><span class="si-icon">🏰</span> פסיעה ראשונה בארמון</a>
-    <a class="sitemap-item" onclick="scrollTo('course-full')"><span class="si-icon">💬</span> תקשורת בזוגיות</a>
-    <a class="sitemap-item" onclick="scrollTo('bootcamp')"><span class="si-icon">🕯️</span> בוטקאמפ בין עונג לרוח</a>
-    <a class="sitemap-item" onclick="scrollTo('kenes')"><span class="si-icon">👸</span> מלכה ולא ליום אחד</a>
-    <a class="sitemap-item" href="https://my.schooler.biz/s/114432/gvoolut" target="_blank"><span class="si-icon">💎</span> פנינים של גיטי</a>
-    <a class="sitemap-item" href="https://my.schooler.biz/s/115640/shmenofob" target="_blank"><span class="si-icon">🪞</span> שמנופוביה — שיעור חדש</a>
-    <a class="sitemap-item" onclick="scrollTo('coach')"><span class="si-icon">🎓</span> הכשרת מאמנות</a>
-    <a class="sitemap-item" onclick="scrollTo('coming-soon')"><span class="si-icon">✨</span> קורס צינור לשפע</a>
-    <a class="sitemap-item" onclick="scrollTo('section-free')"><span class="si-icon">📱</span> סטטוס של גיטי</a>
-    <a class="sitemap-item" onclick="scrollTo('section-free')"><span class="si-icon">📞</span> קו תוכן חינמי</a>
-    <a class="sitemap-item" onclick="scrollTo('section-free')"><span class="si-icon">📧</span> דיוור שבועי</a>
-    <a class="sitemap-item" onclick="scrollTo('section-contact')"><span class="si-icon">✉️</span> יצירת קשר</a>
-  </div>
-</section>
 
 <script>
 /* ── כוכבים ── */
