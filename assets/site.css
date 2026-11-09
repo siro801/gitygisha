@@ -197,6 +197,8 @@ section{position:relative;z-index:2}
 /* CHAT */
 .chat-wrap{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(20px,4vw,48px);align-items:start}
 .q-list{display:flex;flex-direction:column;gap:10px}
+.q-topics{margin-bottom:16px}
+.q-btn[hidden]{display:none}
 .q-btn{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:start;width:100%;min-height:56px;padding:14px 18px;border-radius:16px;border:1px solid var(--line-2);background:var(--surface);cursor:pointer;font-size:16.5px;font-weight:600;color:var(--text);transition:border-color .25s,background .25s,transform .3s var(--ease)}
 .q-btn:hover{border-color:var(--line);transform:translateX(-3px)}
 .q-btn[aria-pressed="true"]{border-color:var(--gold-500);background:linear-gradient(90deg,rgba(201,168,76,.14),var(--surface))}

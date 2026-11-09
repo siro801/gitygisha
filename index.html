@@ -39,8 +39,8 @@
     <nav aria-label="ניווט ראשי"><ul class="nav-links">
       <li><a href="#now">עכשיו</a></li>
       <li><a href="#courses">קורסים</a></li>
+      <li><a href="#ask">שאלי את גיטי</a></li>
       <li hidden><a href="#voices">קולות</a></li>
-      <li hidden><a href="#ask">שאלי את גיטי</a></li>
       <li><a href="#free">חינם</a></li>
       <li><a href="#about">אודות</a></li>
     </ul></nav>
@@ -135,7 +135,7 @@
     <p class="sr-only" id="filter-status" aria-live="polite"></p>
 
     <div class="grid">
-      <article class="card feat rv" data-s="open">
+      <article class="card feat rv" data-s="open" id="c-tikshoret">
         <div class="card-media"><img src="pictures/tikshoret.png" alt="" width="797" height="560"><span class="status s-open">חדש · פתוח להרשמה</span></div>
         <div class="card-body">
           <div class="meta">קורס הדגל · עכשיו בדיגיטל</div>
@@ -153,7 +153,7 @@
         </div>
       </article>
 
-      <article class="card wide rv" data-s="open">
+      <article class="card wide rv" data-s="open" id="c-mini">
         <div class="card-media"><img src="pictures/mini-course.png" alt="" width="818" height="447" loading="lazy"><span class="status s-open">נקודת הכניסה</span></div>
         <div class="card-body">
           <div class="meta">מיני קורס · 5 שיעורי האזנה</div>
@@ -242,13 +242,41 @@
   </div>
 </section>
 
-<!-- 03 VOICES -->
+<!-- 03 ASK GITTY: שאלות ותשובות אמיתיות של גיטי (נשלחו בנובמבר 2026). התוכן ב-assets/site.js, מערך qa -->
+<section class="sec sec-tight" id="ask" aria-labelledby="a-t">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="kicker"><i>03</i> השיח עם גיטי</div><h2 class="sec-title" id="a-t">שאלי את <em>גיטי</em></h2></div>
+      <p class="sec-sub">מה שנשים שואלות, וגיטי עונה. בחרי נושא ושאלה.</p>
+    </div>
+    <div class="chat-wrap rv">
+      <div>
+        <div class="filters q-topics" id="q-topics" role="group" aria-label="נושאי השאלות">
+          <button class="filter" type="button" aria-pressed="true" data-g="gitty">להכיר את גיטי</button>
+          <button class="filter" type="button" aria-pressed="false" data-g="start">איך מתחילים</button>
+          <button class="filter" type="button" aria-pressed="false" data-g="courses">על הקורסים</button>
+        </div>
+        <div class="q-list" id="q-list" role="group" aria-label="שאלות לגיטי"></div>
+      </div>
+      <div class="phone">
+        <div class="phone-top">
+          <span class="brand-mark"><img src="pictures/logo.jpeg" alt="" width="48" height="35"></span>
+          <div><b>גיטי שווארץ</b><span id="chat-state">זמינה בסטטוס היומי</span></div>
+        </div>
+        <div class="thread" id="thread" aria-live="polite"><p class="chat-hint">בחרי שאלה, וגיטי עונה.</p></div>
+        <div class="chat-foot"><span>רוצה עוד? כל יום בסטטוס.</span><a class="link-arrow" href="https://wa.me/447791224946" target="_blank" rel="noopener">להצטרפות לסטטוס <span class="sr-only">(נפתח בחלון חדש)</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 VOICES -->
 <!-- ⚠ טקסטים לדוגמה בלבד. להחליף בציטוטים אמיתיים (באישור הכותבות) לפני העלייה לאוויר. -->
 <!-- TEMP-HIDDEN: מוסתר עד שיגיעו ציטוטים אמיתיים -->
 <section class="sec sec-tight" id="voices" aria-labelledby="v-t" hidden>
   <div class="wrap">
     <div class="sec-head rv">
-      <div><div class="kicker"><i>03</i> קולות מהקהילה</div><h2 class="sec-title" id="v-t">מה הן <em>מספרות</em></h2></div>
+      <div><div class="kicker"><i>04</i> קולות מהקהילה</div><h2 class="sec-title" id="v-t">מה הן <em>מספרות</em></h2></div>
       <p class="sec-sub">נשים מכל העולם, על הרגע שבו משהו זז.</p>
     </div>
     <div class="voices rv" id="voices-box">
@@ -260,29 +288,6 @@
           <button class="icon-btn" type="button" id="v-pause" aria-label="עצירת ההחלפה האוטומטית"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
           <button class="icon-btn" type="button" id="v-next" aria-label="הסיפור הבא"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 04 ASK GITTY -->
-<!-- ⚠ שאלות ותשובות לדוגמה. להחליף בשיח אמיתי עם גיטי לפני העלייה לאוויר. -->
-<!-- TEMP-HIDDEN: מוסתר עד שיגיעו שאלות-תשובות אמיתיות -->
-<section class="sec sec-tight" id="ask" aria-labelledby="a-t" hidden>
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div><div class="kicker"><i>04</i> השיח עם גיטי</div><h2 class="sec-title" id="a-t">שאלי את <em>גיטי</em></h2></div>
-      <p class="sec-sub">השאלות שנשים שואלות כל יום. בחרי אחת.</p>
-    </div>
-    <div class="chat-wrap rv">
-      <div class="q-list" id="q-list" role="group" aria-label="שאלות לגיטי"></div>
-      <div class="phone">
-        <div class="phone-top">
-          <span class="brand-mark"><img src="pictures/logo.jpeg" alt="" width="48" height="35"></span>
-          <div><b>גיטי שווארץ</b><span id="chat-state">זמינה בסטטוס היומי</span></div>
-        </div>
-        <div class="thread" id="thread" aria-live="polite"><p class="chat-hint">בחרי שאלה, וגיטי עונה.</p></div>
-        <div class="chat-foot"><span>רוצה עוד? כל יום בסטטוס.</span><a class="link-arrow" href="https://wa.me/447791224946" target="_blank" rel="noopener">להצטרפות לסטטוס <span class="sr-only">(נפתח בחלון חדש)</span></a></div>
       </div>
     </div>
   </div>
