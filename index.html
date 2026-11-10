@@ -22,14 +22,6 @@
 <a href="#main" class="skip">דילוג לתוכן</a>
 <svg width="0" height="0" aria-hidden="true" style="position:absolute"><defs><linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6CF8F" stop-opacity=".9"/><stop offset="1" stop-color="#C9A84C" stop-opacity="0"/></linearGradient></defs></svg>
 
-<div class="announce" role="region" aria-label="הודעה חדשה">
-  <div class="wrap">
-    <span class="pill-new">חדש</span>
-    <span>תקשורת בזוגיות, עכשיו גם בדיגיטל</span>
-    <a href="#courses">לפרטים</a>
-  </div>
-</div>
-
 <header class="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="גישה לאישה, לראש הדף">
@@ -37,216 +29,202 @@
       <span class="brand-name">גישה לאישה</span>
     </a>
     <nav aria-label="ניווט ראשי"><ul class="nav-links">
-      <li><a href="#now">עכשיו</a></li>
+      <li><a href="#path">הדרך שלך</a></li>
       <li><a href="#courses">קורסים</a></li>
       <li><a href="#ask">שאלי את גיטי</a></li>
       <li hidden><a href="#voices">קולות</a></li>
       <li><a href="#free">חינם</a></li>
       <li><a href="#about">אודות</a></li>
     </ul></nav>
-    <a class="btn btn-gold btn-sm" href="#free">הצטרפי לקהילה</a>
+    <a class="btn btn-gold nav-cta" href="#path">מצאי את הקורס שלך</a>
   </div>
+  <div class="nav-thread" aria-hidden="true"><span id="thread-fill"></span></div>
 </header>
 
 <main id="main">
 
 <!-- HERO -->
 <section class="hero" id="top" aria-labelledby="hero-t">
-  <div class="glow glow-1" aria-hidden="true"></div><div class="glow glow-2" aria-hidden="true"></div>
+  <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+  <div class="glow glow-1" aria-hidden="true"></div>
   <svg class="arches" viewBox="0 0 1100 700" aria-hidden="true">
     <path d="M250 700V330a300 300 0 0 1 600 0v370"/>
     <path d="M200 700V330a350 350 0 0 1 700 0v370"/>
     <path d="M150 700V330a400 400 0 0 1 800 0v370"/>
-    <path d="M100 700V330a450 450 0 0 1 900 0v370" style="opacity:.5"/>
   </svg>
   <div class="wrap hero-inner">
-    <div class="seal rv"><img src="pictures/logo.jpeg" alt="גישה לאישה עם גיטי שווארץ" width="128" height="94"></div>
-    <div class="eyebrow rv" style="--i:1">גיטי שווארץ · רחל אלול</div>
-    <h1 class="rv" style="--i:2" id="hero-t">אישה בקבלה <b>עם גיטי שווארץ</b></h1>
-    <p class="lede rv" style="--i:3">קורסים, שיעורים וקהילה של 10,000 נשים מכל העולם. כל מה שגישה לאישה מציעה, במקום אחד.</p>
+    <a class="hero-badge rv" href="#c-tikshoret"><span class="pill-new">חדש</span>תקשורת בזוגיות, עכשיו גם בדיגיטל<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+    <div class="seal rv" style="--i:1"><img src="pictures/logo.jpeg" alt="גישה לאישה עם גיטי שווארץ" width="128" height="94"></div>
+    <h1 id="hero-t" class="hero-title"><span class="w">אישה</span> <span class="w">בקבלה</span> <b><span class="w">עם</span> <span class="w">גיטי</span> <span class="w">שווארץ</span></b></h1>
+    <p class="lede rv" style="--i:3">קורסים, שיעורים וקהילה של 10,000 נשים מכל העולם. ענִי על שתי שאלות, ונראה לך מאיפה הכי נכון לך להתחיל.</p>
     <div class="hero-ctas rv" style="--i:4">
-      <a class="btn btn-gold" href="#courses">מצאי את הקורס שלך
+      <a class="btn btn-gold" href="#path">מצאי את הקורס שלך
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
       <a class="btn btn-ghost" href="#free">התחילי בחינם</a>
     </div>
-    <div class="stats rv" style="--i:5">
-      <div class="stat"><div class="stat-n">10,000+</div><div class="stat-l">נשים בקהילה</div></div>
-      <div class="stat"><div class="stat-n">28,000+</div><div class="stat-l">האזנות לפודקאסט</div></div>
-      <div class="stat"><div class="stat-n">47</div><div class="stat-l">ערים ומדינות</div></div>
-    </div>
-  </div>
-  <div class="marquee" role="img" aria-label="חברות הקהילה מבני ברק, ירושלים, לונדון, אנטוורפן, ניו יורק ועוד עשרות מקומות בעולם">
-    <div class="marquee-track" id="mq" aria-hidden="true"></div>
+    <dl class="stats rv" style="--i:5">
+      <div class="stat"><dt class="stat-l">נשים בקהילה</dt><dd class="stat-n" data-count="10000" data-plus>10,000+</dd></div>
+      <div class="stat"><dt class="stat-l">האזנות לפודקאסט</dt><dd class="stat-n" data-count="28000" data-plus>28,000+</dd></div>
+      <div class="stat"><dt class="stat-l">ערים ומדינות</dt><dd class="stat-n" data-count="47">47</dd></div>
+    </dl>
   </div>
 </section>
 
-<!-- 01 NOW -->
-<section class="sec" id="now" aria-labelledby="now-t">
+<!-- 1 · PATH FINDER -->
+<section class="sec" id="path" aria-labelledby="p-t">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><div class="kicker"><i>01</i> קורה עכשיו</div><h2 class="sec-title" id="now-t">מה <em>חי</em> בגישה</h2></div>
-      <p class="sec-sub">מה רץ, מה עלה ומה נפתח. בלי חלונות קופצים, הכל כאן.</p>
+      <p class="kicker">שתי שאלות · עשרים שניות</p>
+      <h2 class="sec-title" id="p-t">מאיפה <em>מתחילים?</em></h2>
+      <p class="sec-sub">בחרי את מה שהכי מתאר אותך, ונראה לך את הצעד הבא שלך.</p>
     </div>
-    <div class="now">
-      <article class="now-card feat rv">
-        <span class="tag"><span class="dot"></span>חינם</span>
-        <h3>קו התוכן של גיטי</h3>
-        <p>שיעורים קצרים להאזנה מכל טלפון, ותכנים שמתעדכנים כל הזמן. רוצה לשמוע ראשונה כשעולה חדש? הירשמי לצינתוק בקו.</p>
-        <a class="btn btn-gold btn-sm" href="tel:+97293130743">חייגי <span dir="ltr">09‑313‑0743</span></a>
-      </article>
-      <article class="now-card rv" style="--i:1">
-        <span class="tag live"><span class="dot"></span>פעיל עכשיו</span>
-        <h3>תקשורת בזוגיות: הקבוצה בלומה</h3>
-        <p>הקבוצה הפרונטלית במתחם 'לומה' בירושלים כבר לומדת. ההרשמה לקבוצה הבאה תפורסם כאן.</p>
-      </article>
-      <article class="now-card rv" style="--i:2">
-        <span class="tag live"><span class="dot"></span>פעיל עכשיו</span>
-        <h3>הכשרת מאמנות בגישה</h3>
-        <p>המחזור פעיל. מאמנות חדשות בדרך.</p>
-      </article>
-      <article class="now-card rv" style="--i:3">
-        <span class="tag"><span class="dot"></span>פודקאסט</span>
-        <h3>גיטי שווארץ ונחמי בצון</h3>
-        <p>מעל 28,000 האזנות. בקו, שלוחה 5.</p>
-        <a class="link-arrow" href="tel:+97293130743">להאזנה <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-      </article>
-      <article class="now-card rv" style="--i:4">
-        <span class="tag"><span class="dot"></span>חדש · ₪37</span>
-        <h3>שמנופוביה</h3>
-        <p>שיעור על יופי, ערך עצמי והחומה שבונים סביב הכאב.</p>
-        <a class="link-arrow" href="https://my.schooler.biz/s/115640/shmenofob" target="_blank" rel="noopener">לשיעור <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-      </article>
+
+    <div class="finder rv" id="finder">
+      <div class="f-top">
+        <span class="f-count" id="f-count">שאלה 1 מתוך 2</span>
+        <div class="f-bar" aria-hidden="true"><span id="f-bar"></span></div>
+      </div>
+
+      <div class="f-step" id="f-step1">
+        <h3 class="f-q" id="fq1" tabindex="-1">איפה את היום?</h3>
+        <div class="f-opts" role="group" aria-labelledby="fq1">
+          <button class="f-opt" type="button" data-a="new"><b>רק מתחילה להכיר</b><span>שמעתי על גיטי ורוצה לטעום</span></button>
+          <button class="f-opt" type="button" data-a="deep"><b>מכירה ורוצה להעמיק</b><span>כבר מקשיבה, ורוצה עוד</span></button>
+          <button class="f-opt" type="button" data-a="home"><b>רוצה שינוי בבית</b><span>בזוגיות, בתקשורת, באווירה</span></button>
+          <button class="f-opt" type="button" data-a="grad"><b>בוגרת הקורס</b><span>רוצה ללוות נשים אחרות</span></button>
+        </div>
+      </div>
+
+      <div class="f-step" id="f-step2" hidden>
+        <h3 class="f-q" id="fq2" tabindex="-1">כמה זמן יש לך ללמידה?</h3>
+        <div class="f-opts f-opts-3" role="group" aria-labelledby="fq2">
+          <button class="f-opt" type="button" data-t="min"><b>כמה דקות ביום</b><span>בדרך, במטבח, לפני השינה</span></button>
+          <button class="f-opt" type="button" data-t="week"><b>שעה בשבוע</b><span>בקצב שלי, מתי שנוח</span></button>
+          <button class="f-opt" type="button" data-t="frame"><b>מסגרת קבועה</b><span>עם קבוצה ומפגשים חיים</span></button>
+        </div>
+        <button class="link f-back" type="button" id="f-back">חזרה לשאלה הקודמת</button>
+      </div>
+
+      <div class="f-result" id="f-result" hidden tabindex="-1" aria-live="polite"></div>
     </div>
   </div>
 </section>
 
-<!-- 02 COURSES -->
+<!-- 2 · COURSES -->
 <section class="sec sec-tight" id="courses" aria-labelledby="c-t">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><div class="kicker"><i>02</i> קורסים ותוכניות</div><h2 class="sec-title" id="c-t">הצעד הבא <em>שלך</em></h2></div>
+      <p class="kicker">קורסים ותוכניות</p>
+      <h2 class="sec-title" id="c-t">כל הדרכים <em>לארמון</em></h2>
       <div class="filters" role="group" aria-label="סינון קורסים">
         <button class="filter" type="button" aria-pressed="true" data-f="all">הכל</button>
-        <button class="filter" type="button" aria-pressed="false" data-f="open">פתוח להרשמה</button>
-        <button class="filter" type="button" aria-pressed="false" data-f="live">מחזור פעיל</button>
-        <button class="filter" type="button" aria-pressed="false" data-f="season">נפתח מעת לעת</button>
+        <button class="filter" type="button" aria-pressed="false" data-f="open">אפשר להתחיל עכשיו</button>
+        <button class="filter" type="button" aria-pressed="false" data-f="wait">נפתח בקרוב</button>
       </div>
     </div>
     <p class="sr-only" id="filter-status" aria-live="polite"></p>
 
     <div class="grid">
       <article class="card feat rv" data-s="open" id="c-tikshoret">
-        <div class="card-media"><img src="pictures/tikshoret.png" alt="" width="797" height="560"><span class="status s-open">חדש · פתוח להרשמה</span></div>
+        <div class="card-media"><img src="pictures/tikshoret.png" alt="" width="797" height="560" style="object-position:center 30%"><span class="status s-open">חדש · קורס הדגל</span></div>
         <div class="card-body">
-          <div class="meta">קורס הדגל · עכשיו בדיגיטל</div>
+          <p class="meta">דיגיטלי · בקצב שלך</p>
           <h3>תקשורת בזוגיות: הקורס הדיגיטלי</h3>
-          <p>הקורס של גיטי, בקצב שלך ומכל מקום. בלי לחכות למחזור הבא.</p>
-          <ul class="ticks">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>חלק א׳: 12 מפגשים דיגיטליים</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 מפגשי זום לשאלות ותשובות עם גיטי</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>צופה מתי שנוח לך, מכל מקום בעולם</li>
-          </ul>
-          <div class="price-row"><div class="price">₪3,797<small>חלק א׳</small></div></div>
-          <div class="card-actions">
-            <a class="btn btn-gold" href="https://gitygisha.com/%D7%A7%D7%95%D7%A8%D7%A1-%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA-%D7%91%D7%96%D7%95%D7%92%D7%99%D7%95%D7%AA/" target="_blank" rel="noopener">לפרטים ולהרשמה <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-          </div>
+          <p class="desc">12 מפגשים דיגיטליים, ועוד 4 מפגשי זום עם גיטי לשאלות ותשובות. מכל מקום בעולם.</p>
+          <div class="card-foot"><span class="price">₪3,797<small>חלק א׳</small></span><a class="btn btn-gold" href="https://gitygisha.com/%D7%A7%D7%95%D7%A8%D7%A1-%D7%AA%D7%A7%D7%A9%D7%95%D7%A8%D7%AA-%D7%91%D7%96%D7%95%D7%92%D7%99%D7%95%D7%AA/" target="_blank" rel="noopener">לפרטים<span class="sr-only"> על הקורס הדיגיטלי (נפתח בחלון חדש)</span></a></div>
         </div>
       </article>
 
-      <article class="card wide rv" data-s="open" id="c-mini">
-        <div class="card-media"><img src="pictures/mini-course.png" alt="" width="818" height="447" loading="lazy"><span class="status s-open">נקודת הכניסה</span></div>
+      <article class="card rv" data-s="open" id="c-mini" style="--i:1">
+        <div class="card-media"><img src="pictures/mini-course.png" alt="" width="818" height="447" loading="lazy"><span class="status s-open">נקודת הכניסה</span>
+          <button class="media-chip" type="button" data-open-flyer>לפלייר המלא</button></div>
         <div class="card-body">
-          <div class="meta">מיני קורס · 5 שיעורי האזנה</div>
+          <p class="meta">מיני קורס · 5 שיעורי האזנה</p>
           <h3>פסיעה ראשונה בארמון</h3>
-          <p>מה זה להיות אישה בקבלה, ולמה זה משנה הכל. 10–20 דקות לשיעור.</p>
-          <div class="bonus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M7.5 8a2.5 2.5 0 1 1 4.5-1.5A2.5 2.5 0 1 1 16.5 8"/></svg>בונוס: שובר ₪300 לקורס המלא</div>
-          <div class="price-row"><div class="price">₪87<small>חד־פעמי</small></div></div>
-          <div class="card-actions">
-            <a class="btn btn-gold btn-sm" href="https://secure.cardcom.solutions/e/7plsttYqU2aUDeqA1OMBQ" target="_blank" rel="noopener">להרשמה מיידית <span class="sr-only">(נפתח בחלון חדש)</span></a>
-            <button class="btn btn-ghost btn-sm" type="button" data-open-flyer>לפרטים המלאים</button>
-          </div>
+          <p class="desc">מה זה להיות אישה בקבלה, ולמה זה משנה הכל. ובונוס: שובר ₪300 לקורס המלא.</p>
+          <div class="card-foot"><span class="price">₪87<small>חד־פעמי</small></span><a class="btn btn-gold" href="https://secure.cardcom.solutions/e/7plsttYqU2aUDeqA1OMBQ" target="_blank" rel="noopener">להרשמה<span class="sr-only"> לפסיעה ראשונה בארמון (נפתח בחלון חדש)</span></a></div>
         </div>
       </article>
 
-      <article class="card rv" data-s="live">
-        <div class="card-media"><img src="pictures/tikshoret.png" alt="" width="797" height="560" loading="lazy" style="object-position:center 30%"><span class="status s-live">המחזור בעיצומו</span></div>
+      <article class="card rv" data-s="open" id="c-shmeno" style="--i:2">
+        <div class="card-media"><img src="pictures/shmanophobia.jpg" alt="" width="1200" height="670" loading="lazy" style="object-position:center"><span class="status s-open">חדש · זמין עכשיו</span></div>
         <div class="card-body">
-          <div class="meta">מחזור חי · 21 שיעורים</div>
-          <h3>תקשורת בזוגיות: המחזור החי</h3>
-          <p>קבוצה, זום חי וליווי צמוד של גיטי. ההרשמה למחזור הבא תפורסם כאן.</p>
-          <div class="note">בוגרת חלק א׳? כתבי למשרד להרשמה לחלק ב׳.</div>
-          <a class="link-arrow" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">לרשימת ההמתנה <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="card rv" data-s="live">
-        <div class="card-media"><img src="pictures/maamanot.jpeg" alt="" loading="lazy"><span class="status s-live">המחזור בעיצומו</span></div>
-        <div class="card-body">
-          <div class="meta">לבוגרות חלק א׳ וב׳</div>
-          <h3>הכשרת מאמנות בגישה</h3>
-          <p>לנשים שרוצות ללוות נשים אחרות. ההודעה על המחזור הבא נשלחת אישית לבוגרות.</p>
-          <a class="link-arrow" href="mailto:info@gitygisha.com?subject=%D7%94%D7%9B%D7%A9%D7%A8%D7%AA%20%D7%9E%D7%90%D7%9E%D7%A0%D7%95%D7%AA">בוגרת? כתבי לנו <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-        </div>
-      </article>
-
-      <article class="card rv" data-s="season">
-        <div class="card-media"><img src="pictures/botcamp.png" alt="" width="683" height="595" loading="lazy"><span class="status s-season">נפתח מעת לעת</span></div>
-        <div class="card-body">
-          <div class="meta">בוטקאמפ · לנשים נשואות בלבד</div>
-          <h3>בין עונג לרוח בזוגיות</h3>
-          <p>ארבעה מפגשים על אינטימיות, מהזווית התורנית והפסיכולוגית. מה שמדריכת הכלות לא סיפרה.</p>
-          <div class="price-row"><div class="price">₪990</div><a class="link-arrow" href="#free">עדכני אותי</a></div>
-        </div>
-      </article>
-
-      <article class="card rv" data-s="season">
-        <div class="card-media"><img src="pictures/malka.png" alt="" loading="lazy" style="object-position:center 40%"><span class="status s-season">לפני חגים</span></div>
-        <div class="card-body">
-          <div class="meta">כנסי זום</div>
-          <h3>מלכה ולא ליום אחד</h3>
-          <p>כנס מיוחד לפני חג: תוכן עמוק, זום חי ושאלות ותשובות.</p>
-          <div class="price-row"><div class="price">₪87<small>לכנס</small></div><a class="link-arrow" href="#free">עדכני אותי</a></div>
-        </div>
-      </article>
-
-      <article class="card rv" data-s="open">
-        <div class="card-media"><img src="pictures/shmanophobia.jpg" alt="" width="1200" height="670" loading="lazy" style="object-position:center"><span class="status s-open">זמין עכשיו</span></div>
-        <div class="card-body">
-          <div class="meta">שיעור יחיד · חדש</div>
+          <p class="meta">שיעור יחיד</p>
           <h3>שמנופוביה</h3>
-          <p>על יופי, ערך עצמי והחומה שבונים סביב הכאב. ואיך יוצאים ממנה.</p>
-          <div class="price-row"><div class="price">₪37</div><a class="link-arrow" href="https://my.schooler.biz/s/115640/shmenofob" target="_blank" rel="noopener">לשיעור <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a></div>
+          <p class="desc">על יופי, ערך עצמי והחומה שבונים סביב הכאב. ואיך יוצאים ממנה.</p>
+          <div class="card-foot"><span class="price">₪37</span><a class="btn btn-gold" href="https://my.schooler.biz/s/115640/shmenofob" target="_blank" rel="noopener">לשיעור<span class="sr-only"> שמנופוביה (נפתח בחלון חדש)</span></a></div>
         </div>
       </article>
 
-      <article class="card rv" data-s="open">
+      <article class="card rv" data-s="open" id="c-pninim">
         <div class="card-media"><img src="pictures/pninim.jpg" alt="" width="1200" height="896" loading="lazy" style="object-position:center 55%"><span class="status s-open">זמין עכשיו</span></div>
         <div class="card-body">
-          <div class="meta">ספריית הקלטות</div>
+          <p class="meta">ספריית הקלטות</p>
           <h3>פנינים של גיטי</h3>
-          <p>גבולות, הורות, ילדים להורים גרושים ועוד. שיעורים קצרים לנושאים בוערים.</p>
-          <a class="link-arrow" href="https://my.schooler.biz/s/114432/gvoolut" target="_blank" rel="noopener">לספרייה <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
+          <p class="desc">גבולות, הורות, ילדים להורים גרושים ועוד. שיעורים קצרים לנושאים בוערים.</p>
+          <div class="card-foot"><span class="price muted">מגוון שיעורים</span><a class="btn btn-gold" href="https://my.schooler.biz/s/114432/gvoolut" target="_blank" rel="noopener">לספרייה<span class="sr-only"> פנינים של גיטי (נפתח בחלון חדש)</span></a></div>
         </div>
       </article>
 
-      <article class="card rv" data-s="soon">
-        <div class="card-media type-media dark"><div class="tm"><span>בקרוב</span><small>תוכנית חדשה</small></div><span class="status s-soon">בהכנה</span></div>
+      <article class="card rv" data-s="wait" id="c-live" style="--i:1">
+        <div class="card-media"><img src="pictures/tikshoret.png" alt="" width="797" height="560" loading="lazy" style="object-position:center 70%"><span class="status s-live">המחזור בעיצומו</span></div>
         <div class="card-body">
-          <div class="meta">תוכנית חדשה</div>
+          <p class="meta">מחזור חי · 21 שיעורים</p>
+          <h3>תקשורת בזוגיות: המחזור החי</h3>
+          <p class="desc">קבוצה, זום חי וליווי צמוד של גיטי. הקבוצה בלומה כבר לומדת. בוגרת חלק א׳? כתבי למשרד לחלק ב׳.</p>
+          <div class="card-foot"><span class="price muted">מחזור הבא</span><a class="btn btn-ghost" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">לרשימת ההמתנה<span class="sr-only"> (נפתח בחלון חדש)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-s="wait" id="c-coach" style="--i:2">
+        <div class="card-media"><img src="pictures/maamanot.jpeg" alt="" loading="lazy"><span class="status s-live">המחזור בעיצומו</span></div>
+        <div class="card-body">
+          <p class="meta">לבוגרות חלק א׳ וב׳</p>
+          <h3>הכשרת מאמנות בגישה</h3>
+          <p class="desc">לנשים שרוצות ללוות נשים אחרות. ההודעה על המחזור הבא נשלחת אישית לבוגרות.</p>
+          <div class="card-foot"><span class="price muted">לבוגרות</span><a class="btn btn-ghost" href="mailto:info@gitygisha.com?subject=%D7%94%D7%9B%D7%A9%D7%A8%D7%AA%20%D7%9E%D7%90%D7%9E%D7%A0%D7%95%D7%AA">כתבי לנו<span class="sr-only"> על הכשרת מאמנות</span></a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-s="wait" id="c-boot">
+        <div class="card-media"><img src="pictures/botcamp.png" alt="" width="683" height="595" loading="lazy"><span class="status s-season">נפתח מעת לעת</span></div>
+        <div class="card-body">
+          <p class="meta">בוטקאמפ · לנשים נשואות בלבד</p>
+          <h3>בין עונג לרוח בזוגיות</h3>
+          <p class="desc">ארבעה מפגשים על אינטימיות, מהזווית התורנית והפסיכולוגית.</p>
+          <div class="card-foot"><span class="price">₪990</span><a class="btn btn-ghost" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">עדכני אותי<span class="sr-only"> על הבוטקאמפ (נפתח בחלון חדש)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-s="wait" id="c-malka" style="--i:1">
+        <div class="card-media"><img src="pictures/malka.png" alt="" loading="lazy" style="object-position:center 40%"><span class="status s-season">לפני חגים</span></div>
+        <div class="card-body">
+          <p class="meta">כנס זום</p>
+          <h3>מלכה ולא ליום אחד</h3>
+          <p class="desc">כנס מיוחד לפני חג: תוכן עמוק, זום חי ושאלות ותשובות.</p>
+          <div class="card-foot"><span class="price">₪87<small>לכנס</small></span><a class="btn btn-ghost" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">עדכני אותי<span class="sr-only"> על הכנס הבא (נפתח בחלון חדש)</span></a></div>
+        </div>
+      </article>
+
+      <article class="card rv" data-s="wait" id="c-shefa" style="--i:2">
+        <div class="card-media type-media"><div class="tm"><span>בקרוב</span><small>תוכנית חדשה</small></div><span class="status s-soon">בהכנה</span></div>
+        <div class="card-body">
+          <p class="meta">תוכנית חדשה</p>
           <h3>צינור לשפע ועשירות</h3>
-          <p>תוכנית חדשה בדרך. הצטרפי לרשימה ותשמעי ראשונה.</p>
-          <a class="btn btn-ghost btn-sm" style="align-self:flex-start" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">אני רוצה לדעת ראשונה <span class="sr-only">(נפתח בחלון חדש)</span></a>
+          <p class="desc">תוכנית חדשה בדרך. הצטרפי לרשימה ותשמעי ראשונה.</p>
+          <div class="card-foot"><span class="price muted">בקרוב</span><a class="btn btn-ghost" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">עדכני אותי<span class="sr-only"> על צינור לשפע (נפתח בחלון חדש)</span></a></div>
         </div>
       </article>
     </div>
   </div>
 </section>
 
-<!-- 03 ASK GITTY: שאלות ותשובות אמיתיות של גיטי (נשלחו בנובמבר 2026). התוכן ב-assets/site.js, מערך qa -->
+<!-- 3 · ASK GITTY: שאלות ותשובות אמיתיות של גיטי (נשלחו בנובמבר 2026). התוכן ב-assets/site.js, מערך qa -->
 <section class="sec sec-tight" id="ask" aria-labelledby="a-t">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><div class="kicker"><i>03</i> השיח עם גיטי</div><h2 class="sec-title" id="a-t">שאלי את <em>גיטי</em></h2></div>
+      <p class="kicker">השיח עם גיטי</p>
+      <h2 class="sec-title" id="a-t">שאלי את <em>גיטי</em></h2>
       <p class="sec-sub">מה שנשים שואלות, וגיטי עונה. בחרי נושא ושאלה.</p>
     </div>
     <div class="chat-wrap rv">
@@ -264,19 +242,20 @@
           <div><b>גיטי שווארץ</b><span id="chat-state">זמינה בסטטוס היומי</span></div>
         </div>
         <div class="thread" id="thread" aria-live="polite"><p class="chat-hint">בחרי שאלה, וגיטי עונה.</p></div>
-        <div class="chat-foot"><span>רוצה עוד? כל יום בסטטוס.</span><a class="link-arrow" href="https://wa.me/447791224946" target="_blank" rel="noopener">להצטרפות לסטטוס <span class="sr-only">(נפתח בחלון חדש)</span></a></div>
+        <div class="chat-foot"><span>רוצה עוד? כל יום בסטטוס.</span><a class="link" href="https://wa.me/447791224946" target="_blank" rel="noopener">להצטרפות לסטטוס <span class="sr-only">(נפתח בחלון חדש)</span></a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 04 VOICES -->
+<!-- VOICES -->
 <!-- ⚠ טקסטים לדוגמה בלבד. להחליף בציטוטים אמיתיים (באישור הכותבות) לפני העלייה לאוויר. -->
 <!-- TEMP-HIDDEN: מוסתר עד שיגיעו ציטוטים אמיתיים -->
 <section class="sec sec-tight" id="voices" aria-labelledby="v-t" hidden>
   <div class="wrap">
     <div class="sec-head rv">
-      <div><div class="kicker"><i>04</i> קולות מהקהילה</div><h2 class="sec-title" id="v-t">מה הן <em>מספרות</em></h2></div>
+      <p class="kicker">קולות מהקהילה</p>
+      <h2 class="sec-title" id="v-t">מה הן <em>מספרות</em></h2>
       <p class="sec-sub">נשים מכל העולם, על הרגע שבו משהו זז.</p>
     </div>
     <div class="voices rv" id="voices-box">
@@ -293,74 +272,69 @@
   </div>
 </section>
 
-<!-- 05 FREE -->
+<!-- 4 · FREE -->
 <section class="sec sec-tight" id="free" aria-labelledby="f-t">
   <div class="wrap">
-    <div class="channels rv">
-      <div class="kicker"><i>05</i> חינם · לנשים ובנות</div>
+    <div class="sec-head rv">
+      <p class="kicker">חינם · לנשים ובנות</p>
       <h2 class="sec-title" id="f-t">להיות מחוברת. <em>כל יום.</em></h2>
-      <div class="ch-list">
-        <div class="ch">
-          <div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-          <h3>הסטטוס של גיטי</h3>
-          <p>מסר קצר כל יום בווטסאפ. שלחי הודעה אישית ובקשי להצטרף.</p>
-          <a class="link-arrow" href="https://wa.me/447791224946" target="_blank" rel="noopener">שלחי הודעה <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-        </div>
-        <div class="ch">
-          <div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
-          <h3>קו התוכן</h3>
-          <p>שיעורים שמתעדכנים כל הזמן, וצינתוק כשעולה חדש.</p>
-          <div class="ivr" aria-label="להרשמה לצינתוק: 1 עברית, 2 מסרים, 3 הרשמה"><span class="key"><b>1</b> עברית</span><span class="sep" aria-hidden="true">←</span><span class="key"><b>2</b> מסרים</span><span class="sep" aria-hidden="true">←</span><span class="key"><b>3</b> הרשמה</span></div>
-          <a class="link-arrow" href="tel:+97293130743">חייגי <span dir="ltr">09‑313‑0743</span></a>
-        </div>
-        <div class="ch">
-          <div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
-          <h3>המגזין במייל</h3>
-          <p>אחת לשבועיים: מסרים, תכנים, והראשונות לשמוע על כל קורס.</p>
-          <a class="link-arrow" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">להרשמה לדיוור <span class="sr-only">(נפתח בחלון חדש)</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6"/></svg></a>
-        </div>
+      <p class="sec-sub">שלוש דרכים להתחיל עוד היום, בלי לשלם כלום.</p>
+    </div>
+    <div class="tiles">
+      <div class="tile rv">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>הסטטוס של גיטי</h3>
+        <p>מסר קצר כל יום בווטסאפ. שלחי הודעה אישית ובקשי להצטרף.</p>
+        <a class="btn btn-gold" href="https://wa.me/447791224946" target="_blank" rel="noopener">שלחי הודעה<span class="sr-only"> בווטסאפ (נפתח בחלון חדש)</span></a>
+      </div>
+      <div class="tile rv" style="--i:1">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <h3>קו התוכן והפודקאסט</h3>
+        <p>שיעורים שמתעדכנים כל הזמן, והפודקאסט עם נחמי בצון בשלוחה 5. לצינתוק כשעולה חדש:</p>
+        <div class="ivr" aria-label="להרשמה לצינתוק: 1 עברית, 2 מסרים, 3 הרשמה"><span class="key"><b>1</b> עברית</span><span class="sep" aria-hidden="true">←</span><span class="key"><b>2</b> מסרים</span><span class="sep" aria-hidden="true">←</span><span class="key"><b>3</b> הרשמה</span></div>
+        <a class="btn btn-gold" href="tel:+97293130743">חייגי <span dir="ltr">09‑313‑0743</span></a>
+      </div>
+      <div class="tile rv" style="--i:2">
+        <div class="tile-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+        <h3>המגזין במייל</h3>
+        <p>אחת לשבועיים: מסרים, תכנים, והראשונות לשמוע על כל קורס חדש.</p>
+        <a class="btn btn-gold" href="https://registrationform.ravpage.co.il/free" target="_blank" rel="noopener">להרשמה לדיוור<span class="sr-only"> (נפתח בחלון חדש)</span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- 06 ABOUT -->
+<!-- 5 · ABOUT -->
 <section class="sec sec-tight" id="about" aria-labelledby="ab-t">
-  <div class="wrap about">
-    <div class="rv">
-      <div class="kicker"><i>06</i> <span id="ab-t">על גישה לאישה</span></div>
-      <blockquote style="margin-top:20px">אישה שאוהבת את החיים, את עצמה ואת בורא עולם, רואה שמחה, שפע והצלחה בכל.</blockquote>
-      <cite>גיטי שווארץ</cite>
-      <p class="about-text">גיטי שווארץ, בת למשפחה רבנית מירושלים, מלמדת גישה ייחודית: אישה בקבלה. לצידה רחל אלול, אשת עסקים. יחד הן בנו קהילה של כ־10,000 נשים בכל העולם.</p>
-    </div>
-    <div class="pillars rv" style="--i:1">
-      <div class="pillar"><i>01</i><div><b>סטטוס יומי</b><span>מסר קטן, כל בוקר</span></div></div>
-      <div class="pillar"><i>02</i><div><b>מגזין דו־שבועי</b><span>כל המסרים במקום אחד</span></div></div>
-      <div class="pillar"><i>03</i><div><b>ספריית סרטונים</b><span>מלוקטת בפינצטה</span></div></div>
-      <div class="pillar"><i>04</i><div><b>קורסים</b><span>לכל שלב בדרך</span></div></div>
-      <div class="pillar"><i>05</i><div><b>מפגשים חיים</b><span>וובינרים וזום</span></div></div>
-      <div class="pillar"><i>06</i><div><b>פודקאסטים</b><span>להאזנה בכל מקום</span></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 CONTACT -->
-<section class="sec sec-tight" id="contact" aria-labelledby="ct-t">
   <div class="wrap">
-    <div class="sec-head rv"><div><div class="kicker"><i>07</i> צרי קשר</div><h2 class="sec-title" id="ct-t">אנחנו <em>כאן</em></h2></div></div>
-    <div class="contact">
-      <div class="c-card rv"><h3>שאלות והרשמה</h3><p>שאלה על קורס? הצוות עונה.</p><a href="mailto:info@gitygisha.com">info@gitygisha.com</a></div>
-      <div class="c-card rv" style="--i:1"><h3>שיתופי פעולה ופרסום</h3><p>כל פרסום נבדק אישית. מקומות מוגבלים.</p><a href="mailto:info@gitygisha.com">info@gitygisha.com</a><a href="tel:+972587678499"><span dir="ltr">058‑767‑8499</span></a></div>
-      <div class="c-card rv" style="--i:2"><h3>בניית הדף</h3><p>הוקם ומתוחזק על ידי SIRO Systems.</p><a href="mailto:info@sirosystems.com">info@sirosystems.com</a></div>
+    <div class="about rv">
+      <div>
+        <p class="kicker" id="ab-t">על גישה לאישה</p>
+        <blockquote>אישה שאוהבת את החיים, את עצמה ואת בורא עולם, רואה שמחה, שפע והצלחה בכל.</blockquote>
+        <cite>גיטי שווארץ</cite>
+      </div>
+      <div class="about-side">
+        <p>גיטי שווארץ, בת למשפחה רבנית מירושלים, מלמדת גישה ייחודית: אישה בקבלה. לצידה רחל אלול, אשת עסקים. יחד הן בנו קהילה של כ־10,000 נשים בכל העולם.</p>
+        <a class="btn btn-gold" href="#path">מצאי את הצעד שלך</a>
+      </div>
     </div>
   </div>
 </section>
 </main>
 
 <div class="page-foot"><div class="wrap">
-  <span>© גישה לאישה · כל הזכויות שמורות</span>
-  <nav class="foot-links" aria-label="קישורים בתחתית">
-    <a href="#courses">קורסים</a><a href="#free">תכנים חינמיים</a><a href="https://wa.me/447791224946" target="_blank" rel="noopener">הסטטוס של גיטי</a><a href="tel:+97293130743">קו התוכן</a><a href="mailto:info@gitygisha.com">צרי קשר</a><a href="accessibility.html">הצהרת נגישות</a>
+  <div class="pf-col">
+    <a class="brand" href="#top"><span class="brand-mark"><img src="pictures/logo.jpeg" alt="" width="50" height="36"></span><span class="brand-name">גישה לאישה</span></a>
+    <span>© גישה לאישה · כל הזכויות שמורות</span>
+  </div>
+  <div class="pf-col">
+    <b>שאלות, הרשמה ושיתופי פעולה</b>
+    <a href="mailto:info@gitygisha.com">info@gitygisha.com</a>
+    <a href="tel:+972587678499"><span dir="ltr">058‑767‑8499</span></a>
+  </div>
+  <nav class="pf-col" aria-label="קישורים בתחתית">
+    <b>קישורים</b>
+    <a href="#courses">קורסים</a><a href="#free">תכנים חינמיים</a><a href="https://wa.me/447791224946" target="_blank" rel="noopener">הסטטוס של גיטי</a><a href="accessibility.html">הצהרת נגישות</a>
   </nav>
 </div></div>
 
@@ -372,6 +346,12 @@
     <span>🔒 חיבור מאובטח · SSL · הפרטים מוצפנים</span>
   </span>
 </footer>
+
+<!-- mobile action dock -->
+<div class="dock" id="dock" role="region" aria-label="פעולות מהירות">
+  <a class="btn btn-gold" href="#path">מצאי את הקורס שלך</a>
+  <a class="dock-wa" href="https://wa.me/447791224946" target="_blank" rel="noopener" aria-label="הסטטוס של גיטי בווטסאפ (נפתח בחלון חדש)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+</div>
 
 <dialog class="flyer" id="flyer" aria-label="פרטי המיני קורס פסיעה ראשונה בארמון">
   <div class="box">
